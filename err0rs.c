@@ -14,11 +14,11 @@
  */
 void err(int error__code, ...)
 {
-	va__list ag;
+	va_list ag;
 	char *op;
 	int l__num;
 
-	va__start(ag, error__code);
+	va_start(ag, error__code);
 	switch (error__code)
 	{
 		case 1:
@@ -26,7 +26,7 @@ void err(int error__code, ...)
 			break;
 		case 2:
 			fprintf(stderr, "Error: Can't open file %s\n",
-				va__arg(ag, char *));
+				va_arg(ag, char *));
 			break;
 		case 3:
 			l__num = va_arg(ag, int);
@@ -42,7 +42,7 @@ void err(int error__code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free__nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -56,7 +56,7 @@ void err(int error__code, ...)
  */
 void more__err(int error__code, ...)
 {
-	va__list ag;
+	va_list ag;
 	char *op;
 	int l__num;
 
@@ -83,7 +83,7 @@ void more__err(int error__code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	free__nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -95,22 +95,22 @@ void more__err(int error__code, ...)
  */
 void string__err(int error__code, ...)
 {
-	va__list ag;
+	va_list ag;
 	int l__num;
 
-	va__start(ag, error__code);
-	l__num = va__arg(ag, int);
+	va_start(ag, error__code);
+	l__num = va_arg(ag, int);
 	switch (error__code)
 	{
 		case 10:
-			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", l__num);
 			break;
 		case 11:
-			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", l__num);
 			break;
 		default:
 			break;
 	}
-	free_nodes();
+	free__nodes();
 	exit(EXIT_FAILURE);
 }

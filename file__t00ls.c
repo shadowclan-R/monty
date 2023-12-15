@@ -6,7 +6,7 @@
  * Return: void
  */
 
-void open__file(char *file_name)
+void open__file(char *file__name)
 {
 	FILE *fd = fopen(file__name, "r");
 
@@ -32,7 +32,7 @@ void read__file(FILE *fd)
 
 	for (line__number = 1; getline(&buffer, &len, fd) != -1; line__number++)
 	{
-		format = parse_line(buffer, line__number, format);
+		format = parse__line(buffer, line__number, format);
 	}
 	free(buffer);
 }
@@ -72,14 +72,14 @@ int parse__line(char *buffer, int line_number, int format)
 
 /**
  * find_func -find the-appropriate-function-for-the opcode
- * @op_code: opcode-
+ * @opcode: opcode-
  * @value: argument-of-opcode
  * @format:  storage-format. If 0 Nodes will be entered as a stack.
  * @ln: line number
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void find__func(char *op_code, char *value, int ln, int format)
+void find__func(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
@@ -103,19 +103,19 @@ void find__func(char *op_code, char *value, int ln, int format)
 		{NULL, NULL}
 	};
 
-	if (op__code[0] == '#')
+	if (opcode[0] == '#')
 		return;
 
-	for (flag = 1, i = 0; func__list[i].op_code != NULL; i++)
+	for (flag = 1, i = 0; func__list[i].opcode != NULL; i++)
 	{
-		if (strcmp(op_code, func__list[i].op_code) == 0)
+		if (strcmp(opcode, func__list[i].opcode) == 0)
 		{
-			call__fun(func_list[i].f, op_code, value, ln, format);
+			call__fun(func__list[i].f, opcode, value, ln, format);
 			flag = 0;
 		}
 	}
 	if (flag == 1)
-		err(3, ln, op_code);
+		err(3, ln, opcode);
 }
 
 
@@ -128,9 +128,9 @@ void find__func(char *op_code, char *value, int ln, int format)
  * @format: Format specifier.-If-0-Nodes-will-be-entered as a stack.
  * if 1-nodes will-be entered as a queue.
  */
-void call__fun(op__func func, char *op, char *val, int ln, int format)
+void call__fun(op_func func, char *op, char *val, int ln, int format)
 {
-	stack__t *node;
+	stack_t *node;
 	int flag;
 	int i;
 

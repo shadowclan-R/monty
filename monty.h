@@ -39,8 +39,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack__t *head;
-typedef void (*op_func)(stack__t **, unsigned int);
+extern stack_t *head;
+typedef void (*op_func)(stack_t **, unsigned int);
 
 /*file_operations*/
 void open__file(char *file__name);
