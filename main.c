@@ -1,5 +1,4 @@
 #include "monty.h"
-stack_t *head = NULL;
 
 /**
  * main - entry point
@@ -21,7 +20,7 @@ int main(int argc, char *argv[])
 }
 
 /**
- * create_node-Creates a node.
+ * create__node-Creates a node.
  * @n: Number-to-go-inside the node.
  * Return: Upon-sucess-a-pointer-to-the-node. Otherwise NULL.
  */
@@ -39,11 +38,12 @@ stack_t *create__node(int n)
 }
 
 /**
- * free_nodes-Frees-nodes in the stack.
+ * free__nodes-Frees-nodes in the stack.
  */
 void free__nodes(void)
 {
 	stack_t *tmp;
+	stack_t *head = NULL;
 
 	if (head == NULL)
 		return;
@@ -58,13 +58,14 @@ void free__nodes(void)
 
 
 /**
- * add_to_queue - Adds a node to the queue.
+ * add__to__queue - Adds a node to the queue.
  * @new_node: Pointer to the new node.
  * @ln: line number of the opcode.
  */
 void add__to__queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
+	stack_t *head = NULL;
 
 	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
@@ -79,5 +80,4 @@ void add__to__queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 
 	tmp->next = *new_node;
 	(*new_node)->prev = tmp;
-
 }

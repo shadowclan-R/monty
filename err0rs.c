@@ -47,8 +47,8 @@ void err(int error__code, ...)
 }
 
 /**
- * more_err - handles errors.
- * @error_code: The error codes are the following:
+ * more__err - handles errors.
+ * @error__code: The error codes are the following:
  * (6) => When the_stack it empty for pint.
  * (7) => When the_stack it empty for pop.
  * (8) => When_stack is too short for operation.
@@ -88,8 +88,8 @@ void more__err(int error__code, ...)
 }
 
 /**
- * string_err - handles_errors.
- * @error_code: The error_codes_are the following:
+ * string__err - handles_errors.
+ * @error__code: The error_codes_are the following:
  * (10) ~> The number_inside_a_node is outside ASCII bounds.
  * (11) ~> The stack_is_empty.
  */
