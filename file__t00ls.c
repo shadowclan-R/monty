@@ -131,7 +131,6 @@ void find__func(char *opcode, char *value, int ln, int format)
 void call__fun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *nd;
-	stack_t *head = NULL;
 	int fg;
 	int x;
 

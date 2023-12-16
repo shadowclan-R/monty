@@ -1,4 +1,5 @@
 #include "monty.h"
+stack_t *head = NULL;
 
 /**
  * main - entry point
@@ -43,7 +44,6 @@ stack_t *create__node(int n)
 void free__nodes(void)
 {
 	stack_t *tmp;
-	stack_t *head = NULL;
 
 	if (head == NULL)
 		return;
@@ -65,7 +65,6 @@ void free__nodes(void)
 void add__to__queue(stack_t **new_node, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
-	stack_t *head = NULL;
 
 	if (new_node == NULL || *new_node == NULL)
 		exit(EXIT_FAILURE);
